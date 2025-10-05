@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Houss_Nfissi - Coming Soon</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow: hidden; /* Prevents scrollbars from animation overflows */
+        }
+        /* Canvas for particles.js to be in the background */
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+        /* Custom glow effect for the floating code icon */
+        .code-glow {
+            text-shadow: 0 0 15px rgba(0, 255, 255, 0.5), 0 0 30px rgba(0, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+
+    <!-- Background Animation Canvas -->
+    <div id="particles-js"></div>
+
+    <!-- Main Content Container -->
+    <div class="relative min-h-screen flex flex-col items-center justify-center p-4 z-10">
+
+        <!-- Floating Code Icon -->
+        <div id="floating-code" class="absolute text-cyan-400 text-9xl opacity-10 code-glow select-none">&lt;/&gt;</div>
+
+        <!-- Main Card -->
+        <div id="main-card" class="text-center p-8 md:p-12 bg-black bg-opacity-30 backdrop-blur-md border border-gray-700 rounded-2xl shadow-2xl shadow-cyan-500/10">
+            
+            <h1 id="name" class="text-5xl md:text-7xl font-black tracking-wider uppercase">
+                HOUSSAM NFISSI
+            </h1>
+            
+            <p id="title" class="text-xl md:text-2xl text-cyan-400 mt-4 h-8">
+                <span class="typed-text"></span>
+            </p>
+            
+            <div id="social-links" class="flex justify-center space-x-6 mt-10">
+                <a href="https://github.com/houssamnfissii" target="_blank" class="text-gray-400 hover:text-cyan-400 transition-transform duration-300 transform hover:scale-125">
+                    <i class="fab fa-github fa-2x"></i>
+                </a>
+                <a href="https://www.instagram.com/houssamnfs/" target="_blank" class="text-gray-400 hover:text-cyan-400 transition-transform duration-300 transform hover:scale-125">
+                    <i class="fab fa-instagram fa-2x"></i>
+                </a>
+                <a href="https://t.me/Houssam_nfissi" target="_blank" class="text-gray-400 hover:text-cyan-400 transition-transform duration-300 transform hover:scale-125">
+                    <i class="fab fa-telegram fa-2x"></i>
+                </a>
+            </div>
+
+            <p id="coming-soon" class="mt-12 text-lg text-gray-500 tracking-widest uppercase">
+                Portfolio Coming Soon
+            </p>
+        </div>
+    </div>
+
+    <!-- JavaScript Animation Libraries -->
+    <!-- GSAP for advanced animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    
+    <!-- Typed.js for the typing effect -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+
+    <!-- Particles.js for background animations -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            
+            // 1. Particles.js Configuration
+            particlesJS('particles-js', {
+                "particles": {
+                    "number": {
+                        "value": 60,
+                        "density": {
+                            "enable": true,
+                            "value_area": 800
+                        }
+                    },
+                    "color": {
+                        "value": "#06b6d4" // Cyan color
+                    },
+                    "shape": {
+                        "type": "circle",
+                    },
+                    "opacity": {
+                        "value": 0.5,
+                        "random": true,
+                    },
+                    "size": {
+                        "value": 3,
+                        "random": true,
+                    },
+                    "line_linked": {
+                        "enable": true,
+                        "distance": 150,
+                        "color": "#0891b2", // Darker Cyan
+                        "opacity": 0.4,
+                        "width": 1
+                    },
+                    "move": {
+                        "enable": true,
+                        "speed": 2,
+                        "direction": "none",
+                        "random": false,
+                        "straight": false,
+                        "out_mode": "out",
+                        "bounce": false,
+                    }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                        "onhover": {
+                            "enable": true,
+                            "mode": "grab"
+                        },
+                        "onclick": {
+                            "enable": true,
+                            "mode": "push"
+                        },
+                        "resize": true
+                    },
+                    "modes": {
+                        "grab": {
+                            "distance": 140,
+                            "line_linked": {
+                                "opacity": 1
+                            }
+                        },
+                        "bubble": {
+                            "distance": 400,
+                            "size": 40,
+                            "duration": 2,
+                            "opacity": 8,
+                            "speed": 3
+                        },
+                        "repulse": {
+                            "distance": 200,
+                            "duration": 0.4
+                        },
+                        "push": {
+                            "particles_nb": 4
+                        },
+                        "remove": {
+                            "particles_nb": 2
+                        }
+                    }
+                },
+                "retina_detect": true
+            });
+
+            // 2. Typed.js Configuration for the subtitle
+            new Typed('.typed-text', {
+                strings: ["FULL STACK DEVELOPER", "WEB DESIGNER", "PROBLEM SOLVER"],
+                typeSpeed: 50,
+                backSpeed: 25,
+                backDelay: 1500,
+                startDelay: 500,
+                loop: true,
+                smartBackspace: true
+            });
+
+            // 3. GSAP Animations
+            const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+
+            // Animate main card entrance
+            tl.from("#main-card", { duration: 1, y: 50, opacity: 0, scale: 0.95 });
+
+            // Staggered animation for elements inside the card
+            tl.from("#name", { duration: 0.8, y: 30, opacity: 0 }, "-=0.6");
+            tl.from("#title", { duration: 0.8, y: 20, opacity: 0 }, "-=0.6");
+            tl.from("#social-links > *", { 
+                duration: 0.5, 
+                y: 20, 
+                opacity: 0, 
+                stagger: 0.2 
+            }, "-=0.5");
+            tl.from("#coming-soon", { duration: 1, opacity: 0 }, "-=0.5");
+            
+            // Floating code icon animation
+            gsap.to("#floating-code", {
+                duration: 20,
+                y: "-=30",
+                x: "+=20",
+                rotation: 15,
+                repeat: -1,
+                yoyo: true,
+                ease: "sine.inOut"
+            });
+
+            // Parallax effect for the code icon based on mouse movement
+            document.addEventListener('mousemove', (e) => {
+                const x = (e.clientX - window.innerWidth / 2) / 30;
+                const y = (e.clientY - window.innerHeight / 2) / 30;
+                gsap.to("#floating-code", {
+                    duration: 1,
+                    x: x,
+                    y: y,
+                    ease: "power2.out"
+                });
+            });
+        });
+    </script>
+</body>
+</html>
